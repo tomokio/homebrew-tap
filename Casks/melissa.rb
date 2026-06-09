@@ -9,4 +9,6 @@ cask "melissa" do
   homepage "https://mosynthkey.github.io/Melissa/"
 
   pkg "Melissa_Installer_v#{version}.pkg"
+
+  uninstall pkgutil: "com.melissa-audio.melissa"
 end
