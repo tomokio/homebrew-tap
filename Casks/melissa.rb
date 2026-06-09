@@ -10,5 +10,18 @@ cask "melissa" do
 
   pkg "Melissa_Installer_v#{version}.pkg"
 
-  uninstall pkgutil: "com.melissa-audio.melissa"
+  uninstall pkgutil: "com.melissa-audio.melissa",
+            delete: [
+              "/Applications/Melissa.app",
+              "/Library/Melissa",
+            ]
+
+  zap trash: [
+    "~/Library/Caches/com.melissa-audio.melissa",
+    "~/Library/Caches/Melissa",
+    "~/Library/HTTPStorages/com.melissa-audio.melissa",
+    "~/Library/HTTPStorages/com.melissa-audio.melissa.binarycookies",
+    "~/Library/Melissa",
+    "~/Library/WebKit/com.melissa-audio.melissa",
+  ]
 end
